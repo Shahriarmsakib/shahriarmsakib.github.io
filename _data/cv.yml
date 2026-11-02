@@ -73,17 +73,17 @@ cv:
         url: https://github.com/Shahriarmsakib/emg-robust-toolkit
         summary: "**S. M. Sakib**, et al. Manuscript currently under anonymous peer review. Lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift); compares model failure profiles under changing sensing conditions."
 
-      - title: "Basin-wide groundwater level forecasting in Kumamoto, Japan: integrating transfer learning with Long Short-term Memory Network"
-        publisher: Hydrological Sciences Journal, 70(14), 2590–2608
-        date: 2025-07
-        url: https://doi.org/10.1080/02626667.2025.2530120
-        summary: "A. T. M. S. Rahman, **S. M. Sakib**, M. K. Reza, A. Basak, K. N. Hafiz, M. S. Islam, T. Hosono. Compared independent-training, averaged-data, and transfer-learning LSTMs for basin-wide forecasting; transfer learning matches per-well accuracy with far less training effort."
-
       - title: "Enhancing breast cancer classification via histopathological image analysis: Leveraging self-supervised contrastive learning and transfer learning"
         publisher: Heliyon, 10(2), e24094
         date: 2024-01
         url: https://doi.org/10.1016/j.heliyon.2024.e24094
         summary: "F. B. Ashraf, S. M. M. Alam, **S. M. Sakib**. Self-supervised contrastive learning and a ResNet50–Inception hybrid; 98% accuracy with a compact 3.6M-parameter model."
+
+      - title: "Basin-wide groundwater level forecasting in Kumamoto, Japan: integrating transfer learning with Long Short-term Memory Network"
+        publisher: Hydrological Sciences Journal, 70(14), 2590–2608
+        date: 2025-07
+        url: https://doi.org/10.1080/02626667.2025.2530120
+        summary: "A. T. M. S. Rahman, **S. M. Sakib**, M. K. Reza, A. Basak, K. N. Hafiz, M. S. Islam, T. Hosono. Compared independent-training, averaged-data, and transfer-learning LSTMs for basin-wide forecasting; transfer learning matches per-well accuracy with far less training effort."
 
     Projects:
       - name: Facial expression recognition using CNNs
