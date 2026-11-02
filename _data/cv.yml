@@ -68,10 +68,10 @@ cv:
 
     Publications:
       - title: "Robustness Evaluation for EMG-Based Pose Estimation Models under Controlled Perturbations"
-        publisher: Submitted, HRI 2027 Short Contributions
+        publisher: Manuscript under anonymous peer review
         date: 2026-10
         url: https://github.com/Shahriarmsakib/emg-robust-toolkit
-        summary: "**S. M. Sakib**, et al. Manuscript currently under anonymous peer review. Lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift); compares model failure profiles under changing sensing conditions."
+        summary: "**S. M. Sakib**, et al. Lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift); compares model failure profiles under changing sensing conditions."
 
       - title: "Enhancing breast cancer classification via histopathological image analysis: Leveraging self-supervised contrastive learning and transfer learning"
         publisher: Heliyon, 10(2), e24094
