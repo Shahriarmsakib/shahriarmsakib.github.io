@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: Research on robust and generalizable learning across sensor, vision, and time-series data, followed by selected course and independent projects.
 nav: true

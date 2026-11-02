@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
+title: Repositories
 description: Code for my papers and projects. Everything else is on <a href='https://github.com/Shahriarmsakib'>GitHub</a>.
 nav: true
 nav_order: 3
