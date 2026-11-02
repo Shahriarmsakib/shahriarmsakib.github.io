@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "EMG-Robust: stress-testing EMG pose estimation models"
+title: "Robustness Evaluation for EMG-Based Pose Estimation Models under Controlled Perturbations"
 description: Submitted, HRI 2027 Short Contributions. A lightweight toolkit for evaluating EMG pose estimation models under controlled input perturbations.
 img: assets/img/projects/emg_robust_perturbations.png
 importance: 1
@@ -9,16 +9,16 @@ github: https://github.com/Shahriarmsakib/emg-robust-toolkit
 related_publications: true
 ---
 
-**EMG-Robust: A Lightweight Stress-Testing Toolkit for EMG-Based Human-Robot Interface** {% cite sakib2026emgrobust %}<br>
-**Status:** Submitted, HRI 2027 Short Contributions · **Code:** [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
+{% cite sakib2026robustness %}<br>
+**Status:** Submitted, HRI 2027 Short Contributions. Manuscript currently under anonymous peer review. · **Code:** [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
 
 Developed a lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations such as additive noise, channel dropout, amplitude scaling, and temporal shift. The work compares model failure profiles under changing sensing conditions and studies robustness considerations for downstream human robot interaction.
 
 Surface electromyography (EMG) armbands can tell a robot or prosthesis what the hand is about to do before it moves, which makes them attractive for wearable robots, prosthetic control and teleoperation. EMG models, however, are usually evaluated on clean benchmark recordings. In real use, electrodes lift off, cables move, the armband slides, and the signal drifts out of sync with the user's movement.
 
-**EMG-Robust** is a lightweight, open-source toolkit that injects these failures into an existing EMG-to-hand-pose model under a fixed, reproducible protocol, and reports how much the model's 3D hand-landmark error grows compared with clean input.
+The toolkit is lightweight and open source. It injects these failures into an existing EMG-to-hand-pose model under a fixed, reproducible protocol, and reports how much the model's 3D hand-landmark error grows compared with clean input.
 
-{% include figure.liquid loading="eager" path="assets/img/projects/emg_robust_perturbations.png" title="The four EMG-Robust perturbations" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/emg_robust_perturbations.png" title="The four perturbation families" class="img-fluid rounded z-depth-1" %}
 
 <div class="caption">
     The four perturbation families, shown on a synthetic three-channel signal: additive noise, channel dropout, amplitude scaling and temporal shift.

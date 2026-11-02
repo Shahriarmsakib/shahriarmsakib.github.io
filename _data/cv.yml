@@ -67,11 +67,11 @@ cv:
           - Coordinated a five-member team and presented monthly query-based reports on a dashboard for 13 stakeholders.
 
     Publications:
-      - title: "EMG-Robust: A Lightweight Stress-Testing Toolkit for EMG-Based Human-Robot Interface"
+      - title: "Robustness Evaluation for EMG-Based Pose Estimation Models under Controlled Perturbations"
         publisher: Submitted, HRI 2027 Short Contributions
         date: 2026-10
         url: https://github.com/Shahriarmsakib/emg-robust-toolkit
-        summary: "**S. M. Sakib**, et al. Lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift); compares model failure profiles under changing sensing conditions."
+        summary: "**S. M. Sakib**, et al. Manuscript currently under anonymous peer review. Lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift); compares model failure profiles under changing sensing conditions."
 
       - title: "Basin-wide groundwater level forecasting in Kumamoto, Japan: integrating transfer learning with Long Short-term Memory Network"
         publisher: Hydrological Sciences Journal, 70(14), 2590–2608

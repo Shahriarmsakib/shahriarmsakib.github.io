@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Submitted **EMG-Robust**, a lightweight stress-testing toolkit for evaluating EMG pose estimation models under controlled input perturbations, to HRI 2027 Short Contributions. [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
+Submitted a manuscript on robustness evaluation for EMG-based pose estimation models under controlled perturbations to HRI 2027 Short Contributions; it is currently under anonymous peer review. [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
