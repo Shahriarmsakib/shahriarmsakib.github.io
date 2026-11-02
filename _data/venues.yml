@@ -1,9 +1,7 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"HSJ":
+  url: https://www.tandfonline.com/journals/thsj20
+  color: "#0b6e99"
 
-"PhysRev":
-  url: https://journals.aps.org/
-
-"Vision":
-  color: "#009f36"
+"Heliyon":
+  url: https://www.cell.com/heliyon/home
+  color: "#c8641a"
