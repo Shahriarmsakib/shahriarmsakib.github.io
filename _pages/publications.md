@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Peer-reviewed publications in reverse chronological order. See also my <a href='https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ'>Google Scholar</a> profile.
+description: Publications and manuscripts under review. See also my <a href='https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ'>Google Scholar</a> profile.
 nav: true
 nav_order: 1
 ---
