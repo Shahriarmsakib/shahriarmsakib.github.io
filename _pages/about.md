@@ -10,8 +10,6 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Riverside, California</p>
-    <p><a href="mailto:ssaki004@ucr.edu">ssaki004@ucr.edu</a></p>
-    <p><a href="/cv/">CV</a> · <a href="https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ">Google Scholar</a> · <a href="https://github.com/Shahriarmsakib">GitHub</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -29,6 +27,8 @@ I work at the intersection of applied machine learning, computer vision, and rob
 
 I received my M.S. in Robotics with a focus on Artificial Intelligence and Perception from the University of California, Riverside, where my work involved machine learning, perception, and sensor based systems. I currently work as a Research Data Analyst II at the California Employment Development Department, where I develop analytical workflows and data pipelines for large scale administrative datasets. My broader research goal is to develop reliable and generalizable learning systems for perception, sensing, and intelligent robotic applications.
 
+[ssaki004@ucr.edu](mailto:ssaki004@ucr.edu) · [CV](/cv/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ) · [GitHub](https://github.com/Shahriarmsakib)
+
 **Research Interests**
 
 - **Robust and generalizable machine learning:** understanding model behavior under distribution shift, noisy or incomplete inputs, and changing deployment conditions
@@ -38,5 +38,3 @@ I received my M.S. in Robotics with a focus on Artificial Intelligence and Perce
 - **ML for science and health:** applying machine learning to biomedical imaging, environmental forecasting, and other scientific data
 
 **Background:** M.S. Robotics (AI & Perception), UC Riverside, 2023 · B.Sc. Electrical & Electronic Engineering, Military Institute of Science and Technology (MIST), 2018 · Research Data Analyst II, California Employment Development Department, 2024–present
-
-[Publications](/publications/) · [Research & projects](/projects/) · [CV](/cv/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ) · [GitHub](https://github.com/Shahriarmsakib) · [Email](mailto:ssaki004@ucr.edu)

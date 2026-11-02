@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Shahriar
-middle_name: M.
-last_name: Sakib
+first_name: Shahriar M. Sakib # full name here so the whole name renders bold on the home page
+middle_name:
+last_name:
 contact_note: >
   Email is the best way to reach me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"

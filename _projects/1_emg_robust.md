@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Robustness Evaluation for EMG-Based Pose Estimation Models under Controlled Perturbations"
-description: Submitted, HRI 2027 Short Contributions. A lightweight toolkit for evaluating EMG pose estimation models under controlled input perturbations.
+description: Manuscript under anonymous peer review. A lightweight toolkit for evaluating EMG pose estimation models under controlled input perturbations.
 img: assets/img/projects/emg_robust_perturbations.png
 importance: 1
 category: research
@@ -10,7 +10,7 @@ related_publications: true
 ---
 
 {% cite sakib2026robustness %}<br>
-**Status:** Submitted, HRI 2027 Short Contributions. Manuscript currently under anonymous peer review. · **Code:** [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
+**Status:** Manuscript currently under anonymous peer review. · **Code:** [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
 
 Developed a lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations such as additive noise, channel dropout, amplitude scaling, and temporal shift. The work compares model failure profiles under changing sensing conditions and studies robustness considerations for downstream human robot interaction.
 
