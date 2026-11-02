@@ -39,6 +39,5 @@ I received my M.S. in Robotics with a focus on Artificial Intelligence and Perce
 
 **Background:** M.S. Robotics (AI & Perception), UC Riverside, 2023 · B.Sc. Electrical & Electronic Engineering, Military Institute of Science and Technology (MIST), 2018 · Research Data Analyst II, California Employment Development Department, 2024–present
 
-**Currently:** working on visual imitation learning (behavior cloning) for robotic manipulation in the ManiSkill simulator (in progress).
 
 [Publications](/publications/) · [Research & projects](/projects/) · [CV](/cv/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ) · [GitHub](https://github.com/Shahriarmsakib) · [Email](mailto:ssaki004@ucr.edu)
