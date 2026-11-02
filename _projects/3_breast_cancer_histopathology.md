@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Lightweight breast-cancer histopathology classification
-description: Self-supervised contrastive learning and a 3.6M-parameter ResNet–Inception hybrid on BreakHis (Heliyon, 2024).
+title: Data-efficient and lightweight models for histopathology
+description: Self-supervised contrastive learning with few labels and a 3.6M-parameter ResNet–Inception hybrid, applied to breast-cancer histopathology (Heliyon, 2024).
 img: assets/img/projects/histo_card.jpg
 importance: 3
 category: research

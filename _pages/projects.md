@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research projects and selected course and independent projects.
+description: Research on robust and generalizable learning across sensor, vision, and time-series data, followed by selected course and independent projects.
 nav: true
 nav_order: 2
 display_categories: [research, projects]

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Machine learning researcher · M.S. Robotics (AI & Perception), <a href='https://www.ucr.edu/'>UC Riverside</a>
+subtitle: Machine Learning Researcher · Robust Learning, Vision & Robotics
 
 profile:
   align: right
@@ -11,6 +11,7 @@ profile:
   more_info: >
     <p>Riverside, California</p>
     <p><a href="mailto:ssaki004@ucr.edu">ssaki004@ucr.edu</a></p>
+    <p><a href="/cv/">CV</a> · <a href="https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ">Google Scholar</a> · <a href="https://github.com/Shahriarmsakib">GitHub</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -24,15 +25,20 @@ latest_posts:
   enabled: false
 ---
 
-I work on **reliable machine learning for real-world sensing**: how models behave when the signal is noisy, incomplete, or shifted away from the data they were trained on, and how to build systems that keep working anyway. So far my work has covered surface-EMG hand-pose estimation, medical image analysis, and hydrological time-series forecasting, using robustness evaluation, transfer learning, and self-supervised learning.
+I work at the intersection of machine learning, computer vision, and robotics, with a broader focus on building learning systems that remain reliable across changing data, sensing conditions, and application domains. My research has explored robustness evaluation, transfer learning, self supervised learning, sensor based modeling, and time series forecasting, with applications ranging from EMG based human robot interfaces and biomedical imaging to environmental data.
 
-I received my M.S. in Robotics (Artificial Intelligence & Perception) from the [University of California, Riverside](https://www.ucr.edu/) in 2023, where I was a student researcher and teaching assistant. I currently work as a Research Data Analyst at the California Employment Development Department, building statistical and machine-learning pipelines over administrative datasets with more than 5 million records. Before that, I was a data specialist at Robi Axiata in Dhaka, and I hold a B.Sc. in Electrical & Electronic Engineering from the Military Institute of Science and Technology (MIST), Bangladesh.
+I received my M.S. in Robotics with a focus on Artificial Intelligence and Perception from the University of California, Riverside, where I worked on machine learning, perception, and sensor based systems. I currently work as a Research Data Analyst II at the California Employment Development Department, where I develop analytical and data pipelines for large scale administrative datasets. My broader research goal is to develop reliable and generalizable learning systems for perception, sensing, and intelligent robotic applications.
 
 **Research interests**
 
-- **Robust and reliable ML:** stress-testing models under realistic sensor failures and distribution shift
-- **Robot learning and perception:** learning from wearable and physical sensors for human–robot interfaces
-- **Multimodal and representation learning:** self-supervised and transfer learning when labels are scarce
-- **ML for science and health:** biomedical imaging and environmental forecasting
+- **Robust and generalizable machine learning:** understanding model behavior under distribution shift, noisy or incomplete inputs, and changing deployment conditions
+- **Computer vision and representation learning:** self supervised learning, transfer learning, data efficient learning, and visual representations that generalize across domains
+- **Robot learning and perception:** learning based perception and decision making for intelligent robotic systems, with particular interest in imitation learning, sensor based interaction, and reliable deployment
+- **Multimodal and sensor learning:** learning across visual, physiological, and other sensor modalities and studying how representations transfer across tasks and sensing conditions
+- **ML for science and health:** applying machine learning to biomedical imaging, environmental forecasting, and other scientific data
 
-Selected work is on the [publications](/publications/) and [projects](/projects/) pages, and code is on [GitHub](https://github.com/Shahriarmsakib).
+**Background:** M.S. Robotics (AI & Perception), UC Riverside, 2023 · B.Sc. Electrical & Electronic Engineering, Military Institute of Science and Technology (MIST), 2018 · Research Data Analyst II, California Employment Development Department, 2024–present
+
+**Currently:** working on visual imitation learning (behavior cloning) for robotic manipulation in the ManiSkill simulator (in progress).
+
+[Publications](/publications/) · [Research & projects](/projects/) · [CV](/cv/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=uhqo-rcAAAAJ) · [GitHub](https://github.com/Shahriarmsakib) · [Email](mailto:ssaki004@ucr.edu)
