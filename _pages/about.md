@@ -2,16 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Machine learning researcher · M.S. Robotics (AI & Perception), <a href='https://www.ucr.edu/'>UC Riverside</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Riverside, California</p>
+    <p><a href="mailto:ssaki004@ucr.edu">ssaki004@ucr.edu</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -22,13 +21,18 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I work on **reliable machine learning for real-world sensing**: how models behave when the signal is noisy, incomplete, or shifted away from the data they were trained on, and how to build systems that keep working anyway. So far my work has covered surface-EMG hand-pose estimation, medical image analysis, and hydrological time-series forecasting, using robustness evaluation, transfer learning, and self-supervised learning.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I received my M.S. in Robotics (Artificial Intelligence & Perception) from the [University of California, Riverside](https://www.ucr.edu/) in 2023, where I was a student researcher and teaching assistant. I currently work as a Research Data Analyst at the California Employment Development Department, building statistical and machine-learning pipelines over administrative datasets with more than 5 million records. Before that, I was a data specialist at Robi Axiata in Dhaka, and I hold a B.Sc. in Electrical & Electronic Engineering from the Military Institute of Science and Technology (MIST), Bangladesh.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+**Research interests**
+
+- **Robust and reliable ML:** stress-testing models under realistic sensor failures and distribution shift
+- **Robot learning and perception:** learning from wearable and physical sensors for human–robot interfaces
+- **Multimodal and representation learning:** self-supervised and transfer learning when labels are scarce
+- **ML for science and health:** biomedical imaging and environmental forecasting
+
+Selected work is on the [publications](/publications/) and [projects](/projects/) pages, and code is on [GitHub](https://github.com/Shahriarmsakib).

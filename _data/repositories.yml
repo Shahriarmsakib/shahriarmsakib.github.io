@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Shahriarmsakib
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Shahriarmsakib/emg-robust-toolkit
+  - Shahriarmsakib/LSTM-based-Time-Series-Forecasting-for-ground-water-Level
+  - Shahriarmsakib/Histopathological-image-classification-for-Breast-Cancer
+  - Shahriarmsakib/Facial-Expression-Recognition-using-CNN
+  - Shahriarmsakib/Virtual-canvas
+  - Shahriarmsakib/Room-Occupancy-Estimation
