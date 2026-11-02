@@ -5,9 +5,10 @@ cv:
   location: Riverside, CA
   website: https://shahriarmsakib.github.io
   summary: >-
-    Machine learning researcher with a background in robotics and electrical engineering. I work on reliable learning
-    for real-world sensing (robustness evaluation, transfer learning, and self-supervised learning) across EMG-based
-    hand-pose estimation, medical image analysis, and environmental time-series forecasting.
+    Applied machine learning for robust and generalizable learning across vision, sensor, time-series, and robotic
+    systems. Experience in robustness evaluation, transfer learning, self-supervised learning, sensor-based modeling,
+    and time-series forecasting, with applications in EMG-based human-robot interfaces, biomedical imaging, and
+    environmental data. M.S. in Robotics (AI & Perception), UC Riverside.
 
   social_networks:
     - network: GitHub
@@ -66,6 +67,12 @@ cv:
           - Coordinated a five-member team and presented monthly query-based reports on a dashboard for 13 stakeholders.
 
     Publications:
+      - title: "EMG-Robust: A Lightweight Stress-Testing Toolkit for EMG-Based Human-Robot Interface"
+        publisher: Submitted, HRI 2027 Short Contributions
+        date: 2026-10
+        url: https://github.com/Shahriarmsakib/emg-robust-toolkit
+        summary: "**S. M. Sakib**, et al. Lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift); compares model failure profiles under changing sensing conditions."
+
       - title: "Basin-wide groundwater level forecasting in Kumamoto, Japan: integrating transfer learning with Long Short-term Memory Network"
         publisher: Hydrological Sciences Journal, 70(14), 2590–2608
         date: 2025-07
@@ -79,12 +86,6 @@ cv:
         summary: "F. B. Ashraf, S. M. M. Alam, **S. M. Sakib**. Self-supervised contrastive learning and a ResNet50–Inception hybrid; 98% accuracy with a compact 3.6M-parameter model."
 
     Projects:
-      - name: "EMG-Robust: stress-testing toolkit for EMG hand-pose models (paper submitted)"
-        url: https://github.com/Shahriarmsakib/emg-robust-toolkit
-        summary: Open-source toolkit that applies controlled perturbations (additive noise, channel dropout, amplitude scaling, temporal shift) to EMG pose-estimation models and reports how their accuracy degrades.
-        highlights:
-          - Evaluated on two public emg2pose baselines; models ranked by clean accuracy showed different failure profiles under perturbation.
-
       - name: Facial expression recognition using CNNs
         url: https://github.com/Shahriarmsakib/Facial-Expression-Recognition-using-CNN
         start_date: 2023-04

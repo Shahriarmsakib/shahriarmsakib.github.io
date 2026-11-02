@@ -1,14 +1,18 @@
 ---
 layout: page
-title: EMG-Robust
-description: Stress-testing EMG hand-pose models under realistic sensor failures. Paper submitted.
+title: "EMG-Robust: stress-testing EMG pose estimation models"
+description: Submitted, HRI 2027 Short Contributions. A lightweight toolkit for evaluating EMG pose estimation models under controlled input perturbations.
 img: assets/img/projects/emg_robust_perturbations.png
 importance: 1
 category: research
 github: https://github.com/Shahriarmsakib/emg-robust-toolkit
+related_publications: true
 ---
 
-**Status:** paper submitted · [code on GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
+**EMG-Robust: A Lightweight Stress-Testing Toolkit for EMG-Based Human-Robot Interface** {% cite sakib2026emgrobust %}<br>
+**Status:** Submitted, HRI 2027 Short Contributions · **Code:** [GitHub](https://github.com/Shahriarmsakib/emg-robust-toolkit)
+
+Developed a lightweight stress-testing toolkit for EMG pose estimation models using controlled perturbations such as additive noise, channel dropout, amplitude scaling, and temporal shift. The work compares model failure profiles under changing sensing conditions and studies robustness considerations for downstream human robot interaction.
 
 Surface electromyography (EMG) armbands can tell a robot or prosthesis what the hand is about to do before it moves, which makes them attractive for wearable robots, prosthetic control and teleoperation. EMG models, however, are usually evaluated on clean benchmark recordings. In real use, electrodes lift off, cables move, the armband slides, and the signal drifts out of sync with the user's movement.
 

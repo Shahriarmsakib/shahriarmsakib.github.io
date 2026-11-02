@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Basin-wide groundwater forecasting with transfer learning
-description: One pre-trained LSTM, fine-tuned per well, for 1–3-month groundwater forecasts (Hydrological Sciences Journal, 2025).
+title: Transfer learning for basin-wide groundwater forecasting
+description: Time-series transfer learning — one pre-trained LSTM fine-tuned per site instead of training a model for every well (Hydrological Sciences Journal, 2025).
 img: assets/img/projects/tl_lstm.jpg
 importance: 2
 category: research
