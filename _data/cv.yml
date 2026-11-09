@@ -86,6 +86,12 @@ cv:
         summary: "A. T. M. S. Rahman, **S. M. Sakib**, M. K. Reza, A. Basak, K. N. Hafiz, M. S. Islam, T. Hosono. Compared independent-training, averaged-data, and transfer-learning LSTMs for basin-wide forecasting; transfer learning matches per-well accuracy with far less training effort."
 
     Projects:
+      - name: "Label-efficient visual imitation for robot manipulation (ongoing)"
+        url: https://github.com/Shahriarmsakib/robot-visual-imitation-maniskill
+        summary: Simulation study in ManiSkill 3 of how much action supervision a vision-based manipulation policy (ACT from RGB) needs, and when action-free demonstrations help through inverse dynamics, latent actions or object-centric structure.
+        highlights:
+          - Reproduced the RGB baseline with a stage-wise failure analysis; built an object-centric RGB-D dataset with ground-truth geometry; evaluating inverse-dynamics pseudo-labelling across label budgets (in progress).
+
       - name: Facial expression recognition using CNNs
         url: https://github.com/Shahriarmsakib/Facial-Expression-Recognition-using-CNN
         start_date: 2023-04

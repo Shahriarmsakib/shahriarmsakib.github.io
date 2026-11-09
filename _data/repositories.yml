@@ -4,6 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - Shahriarmsakib/robot-visual-imitation-maniskill
   - Shahriarmsakib/emg-robust-toolkit
   - Shahriarmsakib/LSTM-based-Time-Series-Forecasting-for-ground-water-Level
   - Shahriarmsakib/Histopathological-image-classification-for-Breast-Cancer

@@ -2,10 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Research on robust and generalizable learning across sensor, vision, and time-series data, followed by selected course and independent projects.
+description: Ongoing work in visual imitation learning for robot manipulation, research on robust and generalizable learning across sensor, vision, and time-series data, and selected course and independent projects.
 nav: true
 nav_order: 2
-display_categories: [research, projects]
+display_categories: [ongoing, research, projects]
 horizontal: false
 ---
 
