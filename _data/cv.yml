@@ -90,7 +90,8 @@ cv:
         url: https://github.com/Shahriarmsakib/robot-visual-imitation-maniskill
         summary: Simulation study in ManiSkill 3 of how much action supervision a vision-based manipulation policy (ACT from RGB) needs, and when action-free demonstrations help through inverse dynamics, latent actions or object-centric structure.
         highlights:
-          - Reproduced the RGB baseline with a stage-wise failure analysis; built an object-centric RGB-D dataset with ground-truth geometry; evaluating inverse-dynamics pseudo-labelling across label budgets (in progress).
+          - Reproduced the RGB baseline with a stage-wise failure analysis; built an object-centric RGB-D dataset with ground-truth geometry.
+          - Found that inverse-dynamics pseudo-labels for 900 action-free demos degrade the policy with 25 or 100 labelled demos, while the same demos with true labels succeed in 95/100 scenes; investigating the cause with controlled label-noise experiments (in progress, single seed).
 
       - name: Facial expression recognition using CNNs
         url: https://github.com/Shahriarmsakib/Facial-Expression-Recognition-using-CNN
