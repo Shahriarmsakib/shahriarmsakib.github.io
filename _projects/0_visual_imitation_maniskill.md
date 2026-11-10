@@ -36,7 +36,8 @@ Simulation is a deliberate choice here. Every frame comes with the true action, 
 
 1. **Baseline and diagnosis.** I reproduced the RGB baseline and analyzed where episodes fail. The policy grasps the cube in almost every episode but brings it within the goal tolerance in only about a quarter of them. The bottleneck is precise goal reaching, not grasping.
 2. **Object-centric data pipeline.** I built a dataset of synchronized RGB-D frames, ground-truth object and gripper geometry, and camera calibration in the policy's action space. Replays match the recorded demonstrations.
-3. **Learning from action-free demonstrations (in progress).** An inverse dynamics model trained on a small labelled set labels the rest. With very few labelled demos the labels are worse than predicting no motion, and they become usable at around 25. At that budget, adding the pseudo-labelled demos still hurt the policy, which suggests label quality has to clear a threshold before pseudo-labelling helps.
+3. **Learning from action-free demonstrations (in progress).** An inverse dynamics model (IDM) trained on a small labelled set labels the rest. With very few labelled demos the labels are worse than predicting no motion; from about 25 they become usable. With 100 labelled demos the IDM recovers vertical motion and the gripper well (R² 0.81, 94% correct), but horizontal motion only poorly (R² 0.2–0.3). Even so, adding 900 pseudo-labelled demos made the policy much worse at both budgets: with 100 labelled demos it reaches the cube in 9 of 100 test scenes, against 97 when trained on the 100 labelled demos alone.
+4. **Checking that the comparison is sound.** The same 1,000 demos with their true actions give 95 of 100 successes under the same training schedule, so the schedule is long enough and the gap comes from the labels. Rebuilding the pseudo-labelled dataset with true actions reproduces that training data exactly, which rules out a pipeline bug. I also traced a large GPU-vs-CPU simulator gap to the physics backends (even the expert's recorded actions fail 12% of replays on the GPU simulator), so methods are compared within the CPU simulator the demos were recorded in.
 
 <div class="row">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -47,13 +48,21 @@ Simulation is a deliberate choice here. Every frame comes with the true action, 
     </div>
 </div>
 <div class="caption">
-    Left: where episodes drop out of the pick-and-place sequence. Right: RGB and depth frames with simulator ground truth (cube and end-effector) projected through the camera parameters.
+    Left: where the 100-demo baseline policy's episodes drop out of the pick-and-place sequence (two checkpoints). Right: RGB and depth frames with simulator ground truth (cube and end-effector) projected through the camera parameters.
+</div>
+
+{% include figure.liquid loading="lazy" path="assets/img/projects/maniskill_label_sources.jpg" title="Policies by action-label source" class="img-fluid rounded z-depth-1" %}
+
+<div class="caption">
+    How far policies trained on different action labels get on the same 100 test scenes. More true labels mainly help the approach, grasp and lift; placing the cube at the goal stays rare until the label budget is large. With IDM pseudo-labels for the extra 900 demos (orange), the policy rarely even reaches the cube, although its images are identical to those of the 1,000-label policy. One seed per policy.
 </div>
 
 #### Open questions I am working toward
 
-- Do actions expressed relative to the object and goal fix the precision bottleneck and make action-free learning more reliable?
-- At small label budgets, do latent action models do better than inverse-dynamics pseudo-labelling?
+- Why do pseudo-labels that are reasonable on most dimensions break the policy so completely? Is it the poor horizontal labels, a small systematic bias, or errors that are correlated over time? I am testing this with a controlled label-noise sweep: corrupting the true labels in known ways and measuring the effect on the policy.
+- Can partial or confidence-filtered pseudo-labels (keeping vertical motion and gripper, dropping horizontal motion) recover the benefit of the extra demos?
+- Do latent action models, which never commit to explicit action labels, avoid this failure at small label budgets?
+- Do actions expressed relative to the object and goal fix the goal-precision bottleneck?
 - Which visual representation degrades least under camera, lighting and distractor changes?
 
-The next step is a systematic comparison across label budgets (behavior cloning, inverse-dynamics pseudo-labelling and latent action models) with several seeds, measuring label and latent quality against ground truth. This is work in progress, and nothing here claims transfer to a real robot.
+Next: the label-noise sweep, then partial pseudo-labels and latent action models across label budgets with several seeds. All results so far are single-seed and simulation only, and nothing here claims transfer to a real robot.
