@@ -86,11 +86,13 @@ cv:
         summary: "A. T. M. S. Rahman, **S. M. Sakib**, M. K. Reza, A. Basak, K. N. Hafiz, M. S. Islam, T. Hosono. Compared independent-training, averaged-data, and transfer-learning LSTMs for basin-wide forecasting; transfer learning matches per-well accuracy with far less training effort."
 
     Projects:
-      - name: "Label-efficient visual imitation for robot manipulation (ongoing)"
+      - name: "Label-efficient visual imitation: learning from imperfect action labels (ongoing)"
         url: https://github.com/Shahriarmsakib/robot-visual-imitation-maniskill
-        summary: Simulation study in ManiSkill 3 of how much action supervision a vision-based manipulation policy (ACT from RGB) needs, and when action-free demonstrations help through inverse dynamics, latent actions or object-centric structure.
+        summary: Simulation study in ManiSkill 3 of whether a vision-based manipulation policy (ACT from RGB) can learn from a few action-labelled demonstrations plus many action-free ones, and which errors in inferred action labels break it.
         highlights:
-          - Reproduced the RGB baseline with a stage-wise failure analysis; built an object-centric RGB-D dataset with ground-truth geometry; evaluating inverse-dynamics pseudo-labelling across label budgets (in progress).
+          - Built a reproducible simulation study with stage-wise failure analysis and paired statistical tests; found that inverse-dynamics pseudo-labels for 900 action-free demonstrations collapse the policy (0/100 vs 95/100 with true labels on identical images).
+          - Designed a controlled label-noise experiment showing that error structure matters more than error size; random noise at the inverse-dynamics model's accuracy is nearly harmless (93/100), while systematic shrinkage (1/100) or time-correlated noise (52/100) alone breaks the policy.
+          - Developing labellers that avoid these failure modes (image-based gripper-position labels raise success from 0 to 50–74/100); goal is label-quality measures that predict policy performance, toward learning reliable robot skills from action-free video (ongoing; single-seed simulation results).
 
       - name: Facial expression recognition using CNNs
         url: https://github.com/Shahriarmsakib/Facial-Expression-Recognition-using-CNN
