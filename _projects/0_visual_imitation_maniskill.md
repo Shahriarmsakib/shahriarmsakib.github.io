@@ -1,24 +1,20 @@
 ---
 layout: page
-title: Label-efficient visual imitation for robot manipulation
-description: "Ongoing. How much action supervision does a vision-based manipulation policy need, and when do action-free demonstrations help? Simulation study in ManiSkill 3."
+title: "Label-efficient visual imitation: learning from imperfect action labels"
+description: "Ongoing. Can a vision-based robot policy learn from a few action-labelled demonstrations plus many action-free ones, and which label errors break it? Simulation study in ManiSkill 3."
 img: assets/img/projects/maniskill_card.jpg
 importance: 1
 category: ongoing
 github: https://github.com/Shahriarmsakib/robot-visual-imitation-maniskill
 ---
 
-**Status:** ongoing research, simulation only · **Code:** [GitHub](https://github.com/Shahriarmsakib/robot-visual-imitation-maniskill)
+**Status:** ongoing research, simulation only, one training seed per condition · **Code and full results:** [GitHub](https://github.com/Shahriarmsakib/robot-visual-imitation-maniskill)
 
 #### Research question
 
-Robot demonstrations with recorded actions are expensive to collect, while video of the same behavior without actions is cheap. I am studying how a vision-based manipulation policy can learn from **a few action-labelled demonstrations plus many action-free ones**, and which intermediate structure makes the action-free part useful:
+Robot demonstrations with recorded actions are expensive to collect, while video of the same behavior without actions is cheap. I study how a vision-based manipulation policy can learn from **a few action-labelled demonstrations plus many action-free ones**. The usual route is to infer the missing actions and train on them. My main finding so far is that _how_ those inferred labels are wrong matters far more than _how much_.
 
-- **inverse dynamics** (pseudo-labelling the missing actions),
-- **latent actions** learned from frame-to-frame changes, or
-- **object-centric geometry** (motion expressed relative to the object and goal).
-
-Simulation is a deliberate choice here. Every frame comes with the true action, object poses and camera calibration, so I can measure what real-video studies cannot: how accurate pseudo-labels are, what latent actions encode, and why a policy fails.
+Simulation is a deliberate choice here. Every frame comes with the true action, object poses and camera calibration, so I can corrupt labels in controlled ways, measure label quality exactly, and see why a policy fails.
 
 {% include figure.liquid loading="eager" path="assets/img/projects/maniskill_rollouts.jpg" title="Policy rollouts" class="img-fluid rounded z-depth-1" %}
 
@@ -30,14 +26,23 @@ Simulation is a deliberate choice here. Every frame comes with the true action, 
 
 - **Task and simulator:** ManiSkill 3, `PickCube-v1`, with end-effector delta-position control.
 - **Policy:** ACT (Action Chunking with Transformers) from RGB camera images, starting from the official ManiSkill baseline.
-- **Evaluation:** fixed, reproducible evaluation scenes, plus a stage-wise failure analysis that reads the simulator state at every step (reached, grasped, lifted, reached goal).
+- **Comparison:** 100 action-labelled plus 900 action-free demonstrations. Every condition trains on the same 1,000 demonstrations and images, differs only in the labels of the 900, and is tested on the same 100 scenes in the CPU simulator the demonstrations were recorded in.
+- **Evaluation:** a stage-wise failure analysis that reads the simulator state at every step (reached, grasped, lifted, reached goal), with paired statistical tests between conditions.
+- **Data:** an object-centric pipeline with synchronized RGB-D frames, ground-truth object and gripper geometry, and camera calibration in the policy's action space.
 
-#### Work so far (preliminary, single seed)
+#### Findings so far
 
-1. **Baseline and diagnosis.** I reproduced the RGB baseline and analyzed where episodes fail. The policy grasps the cube in almost every episode but brings it within the goal tolerance in only about a quarter of them. The bottleneck is precise goal reaching, not grasping.
-2. **Object-centric data pipeline.** I built a dataset of synchronized RGB-D frames, ground-truth object and gripper geometry, and camera calibration in the policy's action space. Replays match the recorded demonstrations.
-3. **Learning from action-free demonstrations (in progress).** An inverse dynamics model (IDM) trained on a small labelled set labels the rest. With very few labelled demos the labels are worse than predicting no motion; from about 25 they become usable. With 100 labelled demos the IDM recovers vertical motion and the gripper well (R² 0.81, 94% correct), but horizontal motion only poorly (R² 0.2–0.3). Even so, adding 900 pseudo-labelled demos made the policy much worse at both budgets: with 100 labelled demos it reaches the cube in 9 of 100 test scenes, against 97 when trained on the 100 labelled demos alone.
-4. **Checking that the comparison is sound.** The same 1,000 demos with their true actions give 95 of 100 successes under the same training schedule, so the schedule is long enough and the gap comes from the labels. Rebuilding the pseudo-labelled dataset with true actions reproduces that training data exactly, which rules out a pipeline bug. I also traced a large GPU-vs-CPU simulator gap to the physics backends (even the expert's recorded actions fail 12% of replays on the GPU simulator), so methods are compared within the CPU simulator the demos were recorded in.
+1. **Grasping is solved; goal precision is not.** The baseline policy trained on 100 demonstrations grasps the cube in 97% of episodes but brings it within the goal tolerance in only 25%.
+2. **Inferred labels collapse the policy.** An inverse dynamics model (IDM) trained on the 100 labelled demonstrations labels the other 900. Its labels look acceptable step by step for vertical motion and the gripper, yet the policy trained on them succeeds in 0 of 100 scenes, against 95 with the true labels on identical images. Rebuilding the dataset with true labels reproduces the upper bound exactly, so the failure comes from the labels, not the pipeline.
+3. **Structure, not size.** In a controlled sweep, random label noise as large as the IDM's errors is nearly harmless (93/100): over a 30-step action chunk it averages out. Systematic errors are not. Shrinking horizontal motion to 70% gives 25/100, shrinking it to 40% gives 1/100, and noise correlated over time gives 52/100. The IDM's labels have both flaws.
+4. **Labels built to avoid those flaws.** A small CNN estimates the gripper position in each image, and actions are taken as differences of positions, which keeps their scale right. The policy then succeeds in 50–74 of 100 scenes across labeller builds and variants, against 0 with IDM labels. The same labelling from recorded positions reaches 93/100, and random noise of the image estimates' size still gives 88/100, so the remaining gap again comes from the structure of the image-based errors, not their size.
+5. **Measuring my own uncertainty.** Rebuilding the same labeller moved success from 60 to 74 of 100 (GPU training is not bit-reproducible). Before differences between labellers can be trusted, every condition needs repeated runs.
+
+{% include figure.liquid loading="lazy" path="assets/img/projects/maniskill_label_structure.jpg" title="Task success by label source" class="img-fluid rounded z-depth-1" %}
+
+<div class="caption">
+    Task success when the labels of the 900 action-free demonstrations come from different sources, with the same images and the same 100 test scenes. Random errors barely matter; shrunk or time-correlated errors break the policy, and so do the IDM's learned labels. Labels built from image-based gripper positions recover much of the gap. One training seed per condition.
+</div>
 
 <div class="row">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -51,18 +56,11 @@ Simulation is a deliberate choice here. Every frame comes with the true action, 
     Left: where the 100-demo baseline policy's episodes drop out of the pick-and-place sequence (two checkpoints). Right: RGB and depth frames with simulator ground truth (cube and end-effector) projected through the camera parameters.
 </div>
 
-{% include figure.liquid loading="lazy" path="assets/img/projects/maniskill_label_sources.jpg" title="Policies by action-label source" class="img-fluid rounded z-depth-1" %}
+#### Where this is going
 
-<div class="caption">
-    How far policies trained on different action labels get on the same 100 test scenes. More true labels mainly help the approach, grasp and lift; placing the cube at the goal stays rare until the label budget is large. With IDM pseudo-labels for the extra 900 demos (orange), the policy rarely even reaches the cube, although its images are identical to those of the 1,000-label policy. One seed per policy.
-</div>
+- **Repeated runs** (seeds and labeller rebuilds), so that differences between labellers can be trusted.
+- **Video-only action-free demonstrations** with no robot state at all, and other tasks.
+- **A label-quality measure** that predicts policy performance better than per-step accuracy does.
+- **Latent action models and object-relative actions**, which may avoid explicit labels or fix the goal-precision bottleneck.
 
-#### Open questions I am working toward
-
-- Why do pseudo-labels that are reasonable on most dimensions break the policy so completely? Is it the poor horizontal labels, a small systematic bias, or errors that are correlated over time? I am testing this with a controlled label-noise sweep: corrupting the true labels in known ways and measuring the effect on the policy.
-- Can partial or confidence-filtered pseudo-labels (keeping vertical motion and gripper, dropping horizontal motion) recover the benefit of the extra demos?
-- Do latent action models, which never commit to explicit action labels, avoid this failure at small label budgets?
-- Do actions expressed relative to the object and goal fix the goal-precision bottleneck?
-- Which visual representation degrades least under camera, lighting and distractor changes?
-
-Next: the label-noise sweep, then partial pseudo-labels and latent action models across label budgets with several seeds. All results so far are single-seed and simulation only, and nothing here claims transfer to a real robot.
+The longer-term aim is learning reliable robot skills from cheap, action-free human video. All results here are single-seed simulation results, and nothing claims transfer to a real robot.
